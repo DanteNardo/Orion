@@ -9,39 +9,44 @@ using UnityEngine;
 /*******************************************/
 /*                   CLASS                 */
 /*******************************************/
-[RequireComponent(typeof(PhysicsObject))]
-public class KinematicController : MonoBehaviour {
+[RequireComponent(typeof(Rigidbody))]
+public class VehicleController: MonoBehaviour {
 
 	/***************************************/
 	/*               MEMBERS               */
 	/***************************************/
-
-	// Constants 
-	const float GRAVITY = -9.81f;
-
-	// Components
-	private PhysicsObject physics_object;
+	public UnityCurve.UnityCurve steeringPositive;
+	public UnityCurve.UnityCurve steeringNegative;
+	public UnityCurve.UnityCurve motorTorque;
+	public UnityCurve.UnityCurve brakeTorque;
 
 	/***************************************/
 	/*              PROPERTIES             */
 	/***************************************/
-	private List<Force> Forces { get; set; } = new List<Force>();
-	public Force Gravity = new Force(new Vector3(0, GRAVITY, 0));
-	public Force Friction = new Force(new Vector3(0, 0, 0));
-	public Force Drag = new Force(new Vector3(0, 0, 0));
+	private Rigidbody RB { get; set; }
+	private List<Wheel> Wheels;
+	private float CenterOfMassOffset = -0.5f;
 
 	/***************************************/
 	/*               METHODS               */
 	/***************************************/
-	private void Start() {
-		physics_object = GetComponent<PhysicsObject>();
-		Forces.Add(Gravity);
-		Forces.Add(Friction);
+
+	private void Awake() {
+		// Get components
+		RB = GetComponent<Rigidbody>();
+		Wheels = new List<Wheel>(GetComponentsInChildren<Wheel>());
+
+		// Offset center of mass
+		var centerOfMass = RB.centerOfMass;
+		centerOfMass.y += CenterOfMassOffset;
+		RB.centerOfMass = centerOfMass;
 	}
 
 	private void FixedUpdate() {
-		foreach (var force in Forces) {
-			physics_object.AddForce(force);
+		foreach (var wheel in Wheels) {
+			wheel.Steering = steeringPositive.AsFloat + steeringNegative.AsFloat;
+			wheel.MotorTorque = motorTorque.AsFloat;
+			wheel.BrakeTorque = brakeTorque.AsFloat;
 		}
 	}
 
