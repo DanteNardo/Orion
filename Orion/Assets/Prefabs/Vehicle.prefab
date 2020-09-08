@@ -69,10 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e76699796824b4c834eda64ba88400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: POWER(X, 2) * 10
+  formula: POWER(X+1, 4) * 10
   nextCurve: {fileID: 3490070226969092507}
   curveColor: {r: 0, g: 0, b: 1, a: 1}
-  target: 15
+  target: 40
 --- !u!114 &3490070226969092507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e76699796824b4c834eda64ba88400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: -1 * POWER(X, 2) * 10
+  formula: -1 * POWER(X+1, 4) * 10
   nextCurve: {fileID: 0}
   curveColor: {r: 1, g: 0, b: 0, a: 1}
   target: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de30a63157bf485458e65edb8b7f3ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: -1 * POWER(X, 1/2) * 125
+  formula: -1 * POWER(X, 1/2) * 200
   nextCurve: {fileID: 6188514844847142109}
   curveColor: {r: 0, g: 0, b: 1, a: 1}
   duration: 2.5
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e76699796824b4c834eda64ba88400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: 75 * X
+  formula: 100 * X
   nextCurve: {fileID: 0}
   curveColor: {r: 1, g: 0, b: 0, a: 1}
   target: 0
@@ -401,7 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8286119802694417839}
   - component: {fileID: 8286119802694417825}
-  - component: {fileID: 8286119802694417824}
+  - component: {fileID: 1822993670367770221}
   m_Layer: 0
   m_Name: BackLeft
   m_TagString: Untagged
@@ -417,7 +417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8286119802694417838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -0.5, z: -2}
+  m_LocalPosition: {x: -2, y: -0.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8286119803954474077}
@@ -453,7 +453,7 @@ WheelCollider:
     m_AsymptoteValue: 0.2
     m_Stiffness: 1.5
   m_Enabled: 1
---- !u!114 &8286119802694417824
+--- !u!114 &1822993670367770221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8286119802694417838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a3e90a0d00df74eb20777a2c83fe08, type: 3}
+  m_Script: {fileID: 11500000, guid: b975abec2f0434745b4c8f88b07aa8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wheelPrefab: {fileID: 7472902173853989309, guid: c5347dd8eeb87b34c98595272990eaa1,
@@ -606,7 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8286119802891903003}
   - component: {fileID: 8286119802891903005}
-  - component: {fileID: 8286119802891903004}
+  - component: {fileID: 657921312467690023}
   m_Layer: 0
   m_Name: BackRight
   m_TagString: Untagged
@@ -622,7 +622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8286119802891903002}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -0.5, z: -2}
+  m_LocalPosition: {x: 2, y: -0.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8286119803954474077}
@@ -658,7 +658,7 @@ WheelCollider:
     m_AsymptoteValue: 0.2
     m_Stiffness: 1.5
   m_Enabled: 1
---- !u!114 &8286119802891903004
+--- !u!114 &657921312467690023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8286119802891903002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a3e90a0d00df74eb20777a2c83fe08, type: 3}
+  m_Script: {fileID: 11500000, guid: b975abec2f0434745b4c8f88b07aa8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wheelPrefab: {fileID: 7472902173853989309, guid: c5347dd8eeb87b34c98595272990eaa1,
@@ -682,7 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8286119803140357806}
   - component: {fileID: 8286119803140357792}
-  - component: {fileID: 8286119803140357807}
+  - component: {fileID: 8785077406957508833}
   m_Layer: 0
   m_Name: FrontRight
   m_TagString: Untagged
@@ -698,7 +698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8286119803140357805}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -0.5, z: 2}
+  m_LocalPosition: {x: 2, y: -0.5, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8286119803954474077}
@@ -734,7 +734,7 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1.5
   m_Enabled: 1
---- !u!114 &8286119803140357807
+--- !u!114 &8785077406957508833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8286119803140357805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a3e90a0d00df74eb20777a2c83fe08, type: 3}
+  m_Script: {fileID: 11500000, guid: 751dc1a40edaff84aac8743e3f75e4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wheelPrefab: {fileID: 7472902173853989309, guid: c5347dd8eeb87b34c98595272990eaa1,
@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de30a63157bf485458e65edb8b7f3ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: POWER(X, 1/2) * 125
+  formula: POWER(X, 1/2) * 200
   nextCurve: {fileID: 8286119804014822426}
   curveColor: {r: 0, g: 0, b: 1, a: 1}
   duration: 2.5
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e76699796824b4c834eda64ba88400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: -75 * X
+  formula: -100 * X
   nextCurve: {fileID: 0}
   curveColor: {r: 1, g: 0, b: 0, a: 1}
   target: 0
@@ -993,7 +993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8286119804187819955}
   - component: {fileID: 8286119804188107670}
-  - component: {fileID: 8286119804188107668}
+  - component: {fileID: 8848066220224895962}
   m_Layer: 0
   m_Name: FrontLeft
   m_TagString: Untagged
@@ -1009,7 +1009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8286119804188107667}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -0.5, z: 2}
+  m_LocalPosition: {x: -2, y: -0.5, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8286119803954474077}
@@ -1045,7 +1045,7 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1.5
   m_Enabled: 1
---- !u!114 &8286119804188107668
+--- !u!114 &8848066220224895962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8286119804188107667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a3e90a0d00df74eb20777a2c83fe08, type: 3}
+  m_Script: {fileID: 11500000, guid: 751dc1a40edaff84aac8743e3f75e4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wheelPrefab: {fileID: 7472902173853989309, guid: c5347dd8eeb87b34c98595272990eaa1,
@@ -1128,10 +1128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e76699796824b4c834eda64ba88400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: -1 * POWER(X, 2) * 10
+  formula: -1 * POWER(X+1, 4) * 10
   nextCurve: {fileID: 8286119804412963929}
   curveColor: {r: 0, g: 0, b: 1, a: 1}
-  target: -15
+  target: -40
 --- !u!114 &8286119804412963929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e76699796824b4c834eda64ba88400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: POWER(X, 2) * 10
+  formula: POWER(X+1, 4) * 10
   nextCurve: {fileID: 0}
   curveColor: {r: 1, g: 0, b: 0, a: 1}
   target: 0

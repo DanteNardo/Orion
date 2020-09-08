@@ -24,8 +24,9 @@ public class VehicleController: MonoBehaviour {
 	/*              PROPERTIES             */
 	/***************************************/
 	private Rigidbody RB { get; set; }
-	private List<Wheel> Wheels;
-	private float CenterOfMassOffset = -0.5f;
+	private List<FrontWheel> FrontWheels;
+	private List<BackWheel> BackWheels;
+	//private float CenterOfMassOffset = -0.5f;
 
 	/***************************************/
 	/*               METHODS               */
@@ -34,19 +35,23 @@ public class VehicleController: MonoBehaviour {
 	private void Awake() {
 		// Get components
 		RB = GetComponent<Rigidbody>();
-		Wheels = new List<Wheel>(GetComponentsInChildren<Wheel>());
+		FrontWheels = new List<FrontWheel>(GetComponentsInChildren<FrontWheel>());
+		BackWheels = new List<BackWheel>(GetComponentsInChildren<BackWheel>());
 
 		// Offset center of mass
-		var centerOfMass = RB.centerOfMass;
-		centerOfMass.y += CenterOfMassOffset;
-		RB.centerOfMass = centerOfMass;
+		//var centerOfMass = RB.centerOfMass;
+		//centerOfMass.y += CenterOfMassOffset;
+		//RB.centerOfMass = centerOfMass;
 	}
 
 	private void FixedUpdate() {
-		foreach (var wheel in Wheels) {
-			wheel.Steering = steeringPositive.AsFloat + steeringNegative.AsFloat;
-			wheel.MotorTorque = motorTorque.AsFloat;
-			wheel.BrakeTorque = brakeTorque.AsFloat;
+		foreach (var frontWheel in FrontWheels) {
+			frontWheel.Steering = steeringPositive.AsFloat + steeringNegative.AsFloat;
+		}
+
+		foreach (var backWheel in BackWheels) {
+			backWheel.MotorTorque = motorTorque.AsFloat;
+			backWheel.BrakeTorque = brakeTorque.AsFloat;
 		}
 	}
 
